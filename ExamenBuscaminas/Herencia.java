@@ -1,9 +1,7 @@
-public class Herencia{ //creo la clase que contendra a los getters y los stetters
-    //declaro las variables
+public class Herencia{ 
     private String nombre, usuario;
     private int ID;
     
-    //Declaro el builder
     public Herencia(){
     }
     

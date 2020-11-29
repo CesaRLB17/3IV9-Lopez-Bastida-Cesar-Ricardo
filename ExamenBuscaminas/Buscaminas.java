@@ -1,25 +1,24 @@
 import java.util.*;
-//Se declara que la clase se extiende de una clase padre
+
 public class Buscaminas extends Herencia{
-    //se declara el constructor
+  
     public Buscaminas(){
     }
-    //acceso a las variables de herencia
+ 
     public Buscaminas(String nombre, String usuario, int ID){
         super(nombre,usuario,ID);
     }
-    //se declara el scanner
-    Scanner entrada = new Scanner (System.in);
-    //metodo para invocar al juego (dificultad facil)
-    //juego basado en el de Mitchel Hdz ((2016))
+
+	Scanner entrada = new Scanner (System.in);
+	
 	public void juego(){
 		
-		//se crea un array, de 215x15, el cual sera nuesto "Tablero", aunque no se representara graficamente
+		
 		int tablero [][]= new int[15][15];
 		double w=0;
   		double z=0;
 		int ntminas=0;
-		int intento=75;
+		int intento=50;
 		int tminas=10;
 		
 		for(int j=0;j<15;j++)
@@ -27,7 +26,7 @@ public class Buscaminas extends Herencia{
 				tablero [j][i]=0;
 		
 		do  {  
-            //se usa math randmon para que la pocision en la que se encuentran las minas sea diferente
+           
      			w=Math.random()*15;
         		z=Math.random()*15;  
            		w=(int)w;
@@ -38,19 +37,17 @@ public class Buscaminas extends Herencia{
            			}
        		}while (ntminas<=10);
        
-               //se hace uso de la herencia
-        System.out.println("\n****************************************************************");
+		System.out.println("******************************************************************")
         System.out.println("\nHola "+getUsuario()+"                                          *");
-        System.out.println("\nSuerte "+getNombre()+"                                          *");
-        System.out.println("\nTu ID es: "+getID()+"                                          *");
-        System.out.println("\n****************************************************************");
-       	System.out.println("  Ingresa una coordenada, seleccionando dos numeros del 1 al 15");
+        System.out.println("\nDa lo mejor de ti " +getNombre()+"                             *");
+        System.out.println("\nTu ID es: "+getID()+"                                          *");	
+		System.out.println("******************************************************************")
+		System.out.println("  Ingresa la coordenada en la que desees probar suerte, tienes del 1 al 15 de columnas y filas");
        	do {
-       		int x=0,y=0;            //por este medio se repetira el programa en 0 cada turno
+       		int x=0,y=0;          
        		int nminas = 0;
        		
        		do{
-       			 System.out.println("\n-******************************************************");
        			 System.out.println("\n	Intento :"+intento+" , Ingrese una coordenada? \n");
        			 System.out.print("		Fila:  ");
        			 x=entrada.nextInt();
@@ -59,7 +56,7 @@ public class Buscaminas extends Herencia{
        			 y=entrada.nextInt();
        			 
        			 if(x==0 || y==0 || x>15 || y>15)
-       			 	System.out.println("\n	==>Ojo a la comedia<== \n");
+       			 	System.out.println("\nLa coordenada no existe \n");
        		}while (x==0 || y==0 || x>15 || y>15);
        		
        		x=x-1;
@@ -118,7 +115,7 @@ public class Buscaminas extends Herencia{
        		else
        			{
        				tminas = tminas-1;
-       				System.out.println("\n	Acertaste!, Mina Eliminada Restan "+tminas+" Minas");
+       				System.out.println("\n	Haz desactivado una bomba! Te quedan "+tminas+" Minas");
        				System.out.println("\n	Intentos restantes: "+(intento-1));
        			}
        	
@@ -138,10 +135,10 @@ public class Buscaminas extends Herencia{
             System.out.println("Perdiste, ");
         }
         public void Derrota2(){
-            System.out.println("Perdiste, te quedaste sin intentos :(");
+            System.out.println("Perdiste, no te quedan más intentos, :c");
         }
         public void Victoria(){
-            System.out.println("Felicidades, desactivaste todas las minas");
+            System.out.println("Victoria! Haz desactivado todas las minas");
 		}
 	}
        

@@ -22,16 +22,16 @@ int n1;
 
 Datos BM = new Datos();
 
-System.out.println("*Menu*\nDigite 1 para ejecutar el buscaminas");
+System.out.println("*Menu*\nDigite 1 para comenzar el programa");
 n1 = entrada.nextInt();
 if(n1 != 1){
-    System.out.println("Esa opción no está disponible");
+    System.out.println("Eso no es un uno");
 } 
 switch (n1){
 
     case 1:
-    BM.identificacion();
     try{
+    BM.identificacion();
 }catch(Exception e){
 
     System.out.println("El dato ingresado es incorrecto");

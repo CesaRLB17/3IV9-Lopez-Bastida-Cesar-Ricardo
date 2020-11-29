@@ -21,7 +21,7 @@ public class Datos{
         System.out.println("Vaya nombre, ahora ingresa tu ID");
         ID = entrada.nextInt();
 
-        System.out.println("Instrucciones:\nBienvenido al juego chaval, esto es buscaminas, no evitaminas por lo que tendras que hallar las minas y desactivarlas");
+        System.out.println("Instrucciones:\nBienvenido al juego chaval, esto es buscaminas, no evitaminas, por lo que tendras que hallar las minas y desactivarlas");
         
         System.out.println("Digite '1' para ejecutar el juego");
         numero = entrada.nextInt();
@@ -29,6 +29,7 @@ public class Datos{
         Buscaminas dear = new Buscaminas(nombre, usuario, ID);
         if (numero==1){
         System.out.println("El juego se esta iniciando");
+        dear.juego();
 
         }
 
